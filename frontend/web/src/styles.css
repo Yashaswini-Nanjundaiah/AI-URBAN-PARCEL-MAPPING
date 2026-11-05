@@ -1,0 +1,262 @@
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  color: #1d1a16;
+  background: #d9d2c5;
+  font-family: "Segoe UI", "Avenir Next", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  min-height: 100vh;
+}
+
+.side-panel {
+  background: #f4efe6;
+  border-right: 1px solid #cfc5b4;
+  padding: 22px 20px 32px;
+  overflow: auto;
+  max-height: 100vh;
+}
+
+.brand h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 32px;
+  line-height: 0.95;
+  font-weight: 600;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #0f6e56;
+}
+
+.lede,
+.hint {
+  color: #5d564c;
+  line-height: 1.45;
+}
+
+.panel-block {
+  margin-top: 22px;
+}
+
+.panel-block h2 {
+  margin: 0 0 10px;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #a8a095;
+}
+
+.dot.ok {
+  background: #0f6e56;
+}
+
+.dot.bad {
+  background: #b45309;
+}
+
+.upload-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  border: 1px dashed #8d8374;
+  background: #fffdf8;
+  cursor: pointer;
+}
+
+.upload-control input {
+  display: none;
+}
+
+.meta-card img {
+  display: block;
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  margin: 12px 0;
+  background: #ddd6c8;
+}
+
+dl {
+  margin: 0;
+}
+
+dl div {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+dt {
+  color: #6d655b;
+}
+
+dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+button,
+.downloads a {
+  border: 0;
+  background: #0f6e56;
+  color: white;
+  padding: 10px 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.meta-card button,
+.downloads {
+  margin-top: 12px;
+}
+
+.downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.downloads a {
+  background: #1d1a16;
+  font-size: 14px;
+}
+
+.run-state {
+  display: inline-block;
+  margin: 0 0 8px;
+  padding: 3px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  background: #efe6d4;
+}
+
+.run-state.completed {
+  background: #d7efe4;
+}
+
+.run-state.failed {
+  background: #f8d7c4;
+}
+
+.run-state.processing,
+.run-state.pending {
+  background: #f3e2b8;
+}
+
+.layers label {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.runs ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.runs button {
+  width: 100%;
+  margin-bottom: 8px;
+  text-align: left;
+  background: #fffdf8;
+  color: #1d1a16;
+  border: 1px solid #e2d9cb;
+}
+
+.runs button.selected {
+  border-color: #0f6e56;
+}
+
+.runs button strong,
+.runs button span {
+  display: block;
+}
+
+.runs button span {
+  color: #6d655b;
+  font-size: 13px;
+}
+
+.banner {
+  margin-top: 16px;
+  padding: 10px 12px;
+  line-height: 1.4;
+}
+
+.banner.info {
+  background: #e5f2ec;
+}
+
+.banner.error {
+  background: #f8e4d8;
+}
+
+.map-stage {
+  min-height: 100vh;
+}
+
+.map-canvas {
+  height: 100vh;
+  width: 100%;
+  background: #c8c0b2;
+}
+
+@media (max-width: 860px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .side-panel,
+  .map-canvas,
+  .map-stage {
+    max-height: none;
+    height: auto;
+  }
+
+  .map-canvas {
+    height: 70vh;
+  }
+}

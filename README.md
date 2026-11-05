@@ -3,14 +3,15 @@
 AI-based building detection and candidate open-region extraction from georeferenced aerial imagery.
 
 ## Technology Stack
-- Python
-- ONNX Runtime
-- OpenCV
-- Rasterio
+- Python image preprocessing
+- ONNX Runtime building detection
+- Rasterio, Shapely, and PyProj geospatial extraction
 - FastAPI
-- Streamlit
-- SQLite
+- React and Leaflet
+- PostgreSQL and PostGIS
 - GeoJSON
+
+The original Streamlit dashboard remains available at `frontend/app.py`.
 
 ## Features
 - GeoTIFF image input
@@ -33,9 +34,15 @@ AI-based building detection and candidate open-region extraction from georeferen
 5. Place the required ONNX model in:
    `ai_model/model_weights/model.onnx`
 6. Add a suitable GeoTIFF image to the dataset.
-7. Start the backend:
+7. Start PostgreSQL with PostGIS:
+   `docker compose up -d`
+8. Start the backend:
    `uvicorn backend.main:app --reload`
-8. Start the dashboard:
+9. Start the map application:
+   `cd frontend/web`
+   `npm install`
+   `npm run dev`
+10. The Streamlit prototype is still available with:
    `streamlit run frontend/app.py`
 
 ## Note

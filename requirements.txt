@@ -37,6 +37,7 @@ pydantic_core==2.50.2
 pydeck==0.9.3
 pyparsing==3.3.3
 pyproj==3.8.0
+psycopg[binary]==3.2.10
 python-dateutil==4.0.0
 python-multipart==0.0.33
 rasterio==1.5.2
